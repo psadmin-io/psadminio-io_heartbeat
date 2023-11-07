@@ -10,7 +10,7 @@ class io_heartbeat::app (
   $fqdn                      = $io_heartbeat::fqdn
 ) inherits io_heartbeat {
   $appserver_domain_list.each |$domain_name, $appserver_domain_info| {
-    notify { "Create Heartbeat monitors for ${domain_name}": }
+    notify { "Create Heartbeat monitors for app domain ${domain_name}": }
 
     file { "${monitor_location}/${hostname}-app-${domain_name}.yml" :
       ensure  => file,

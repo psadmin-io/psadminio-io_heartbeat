@@ -10,7 +10,7 @@ class io_heartbeat::web (
   $fqdn                      = $io_heartbeat::fqdn
 ) inherits io_heartbeat {
   $pia_domain_list.each |$domain_name, $pia_domain_info| {
-    notify { "Create Heartbeat monitors for ${domain_name}": }
+    notify { "Create Heartbeat monitors for web domain ${domain_name}": }
 
     file { "${monitor_location}/${hostname}-web-${domain_name}.yml" :
       ensure  => file,
