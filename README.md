@@ -32,6 +32,6 @@
 ---
 io_heartbeat::monitor_location:   '/psoft/share/monitor'
 io_heartbeat::service_name:       "%{::environment}"
-io_heartbeat::pia:                true
+io_heartbeat::web:                true
 io_heartbeat::appserver:          true
 ```
