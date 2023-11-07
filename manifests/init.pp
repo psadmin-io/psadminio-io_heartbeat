@@ -1,7 +1,7 @@
 class io_heartbeat (
   $ensure                    = lookup('ensure', undef, undef, 'present'),
   $psft_runtime_user_name    = lookup('psft_runtime_user_name', undef, undef, 'psadm2'),
-  $psft_install_user_name    = lookup('psft_install_user_name', undef, undef, 'psadm1'),
+  $psft_runtime_group_name   = lookup('psft_runtime_group_name', undef, undef, 'psadm1'),
   $pia_domain_list           = lookup('pia_domain_list', undef, undef, ''),
   $appserver_domain_list     = lookup('appserver_domain_list', undef, undef, ''),
   $jolt_port                 = lookup('jolt_port', undef, undef, ''),
