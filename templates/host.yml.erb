@@ -1,0 +1,6 @@
+- type: icmp
+  schedule: '@every 60s'
+  id: server-<%= @hostname %>
+  name: <%= service_name %>-<%= @hostname %>
+  service.name: <%= @service_name %>
+  hosts: [ '<%= @fqdn %>' ]
