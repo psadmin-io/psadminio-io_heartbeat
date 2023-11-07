@@ -1,20 +1,20 @@
-class io_heartbeat::web (
+class io_heartbeat::app (
   $ensure                    = $io_heartbeat::ensure,
   $psft_runtime_user_name    = $io_heartbeat::psft_runtime_user_name,
   $psft_runtime_group_name   = $io_heartbeat::psft_runtime_group_name,
-  $pia_domain_list           = $io_heartbeat::pia_domain_list,
+  $appserver_domain_list     = $io_heartbeat::appserver_domain_list,
+  $app_port                  = $io_heartbeat::app_port,
   $monitor_location          = $io_heartbeat::monitor_location,
   $service_name              = $io_heartbeat::service_name,
-  $web_port                  = $io_heartbeat::web_port,
   $hostname                  = $io_heartbeat::hostname,
   $fqdn                      = $io_heartbeat::fqdn
 ) inherits io_heartbeat {
-  $pia_domain_list.each |$domain_name, $pia_domain_info| {
+  $appserver_domain_list.each |$domain_name, $appserver_domain_info| {
     notify { "Create Heartbeat monitors for ${domain_name}": }
 
-    file { "${monitor_location}/${hostname}-web-${domain_name}.yml" :
+    file { "${monitor_location}/${hostname}-app-${domain_name}.yml" :
       ensure  => file,
-      content => template('io_heartbeat/web.yml.erb'),
+      content => template('io_heartbeat/app.yml.erb'),
       owner   => $psft_runtime_user_name,
       group   => $psft_runtime_group_name,
       mode    => '0644',

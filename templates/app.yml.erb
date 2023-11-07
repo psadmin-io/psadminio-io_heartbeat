@@ -1,0 +1,6 @@
+- type: tcp
+  schedule: '@every 60s'
+  id: app-<%= @domain_name %>-<%= @hostname %>
+  name: <%= @domain_name %>-<%= @hostname %>
+  service.name: <%= @service_name %>
+  hosts: [ 'tcp://<%= @fqdn %>:<%= @app_port %>' ]

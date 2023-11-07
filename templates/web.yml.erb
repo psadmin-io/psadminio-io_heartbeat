@@ -3,6 +3,6 @@
   id: web-<%= @domain_name %>-<%= @hostname %>
   name: <%= @domain_name %>-<%= @hostname %>
   service.name: <%= @service_name %>
-  urls: ["http://<%= @fqdn %>:<%= @pia_http_port %>/index.html"]
+  urls: ["http://<%= @fqdn %>:<%= @web_port %>/index.html"]
   check.response:
     status: [200, 503]
