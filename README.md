@@ -79,9 +79,11 @@ io_heartbeat::web_port:         "%{hiera('pia_http_port')}"
 io_heartbeat::app:              true
 io_heartbeat::app_port:         "%{hiera('jolt_port')}"
 io_heartbeat::pia:              true
-io_heartbeat::pia_url:          'https://lmdev.psadmin.io/psp/ps/EMPLOYEE/ELM'
+io_heartbeat::pia_url:          "https://%{hiera('dns_name')}/psp/ps/EMPLOYEE/ELM"
 io_heartbeat::pia_user:         'UPTIME'
 io_heartbeat::pia_pwd:          'UPT!ME' 
 # you can also reference a keystore value
 io_heartbeat::pia_pwd:          '${UPTIME_PWD}'
+io_heartbeat::igw:              true
+io_heartbeat::igw_url:          "https://%{hiera('dns_name')}/PSIGW/PeopleSoftListeningConnector"
 ```
