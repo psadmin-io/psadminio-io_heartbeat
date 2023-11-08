@@ -63,6 +63,10 @@ Configuration options:
 * Web Port: Specify HTTP port for the web monitor (default is `8000`)
 * App (boolean): Create monitor files for app server
 * App Port: Specify Jolt port for the app monitor (default is `9033`)
+* PIA (boolean): Create a monitor to attempt a login
+* PIA URL: The URL the login POST will use
+* PIA User: The username to login to the PIA
+* PIA Password: The password to login to the PIA
 
 Add this configuration to your `psft_customizations.yaml` file to enable `io_heartbeat`.
 
@@ -74,4 +78,10 @@ io_heartbeat::web:              true
 io_heartbeat::web_port:         "%{hiera('pia_http_port')}"
 io_heartbeat::app:              true
 io_heartbeat::app_port:         "%{hiera('jolt_port')}"
+io_heartbeat::pia:              true
+io_heartbeat::pia_url:          'https://lmdev.psadmin.io/psp/ps/EMPLOYEE/ELM'
+io_heartbeat::pia_user:         'UPTIME'
+io_heartbeat::pia_pwd:          'UPT!ME' 
+# you can also reference a keystore value
+io_heartbeat::pia_pwd:          '${UPTIME_PWD}'
 ```

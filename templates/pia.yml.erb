@@ -1,0 +1,15 @@
+- type: http
+  schedule: '@every 60s'
+  id: pia-<%= @domain_name %>
+  name: <%= @domain_name %>
+  service.name: <%= @service_name %>
+  urls: [ "<%= @pia_url %>" ]
+  max_redirects: 2
+  check.request:
+    method: POST
+    headers:
+      'Content-Type': 'application/x-www-form-urlencoded'
+    # URL Encoded
+    body: "userid=<%= @pia_user %>&pwd=<%= @pia_pwd %>"
+  check.response:
+    body: WEBLIB_PTBR.ISCRIPT1.FieldFormula.IScript_StartPage
