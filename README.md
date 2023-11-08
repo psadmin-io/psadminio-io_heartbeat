@@ -67,6 +67,8 @@ Configuration options:
 * PIA URL: The URL the login POST will use
 * PIA User: The username to login to the PIA
 * PIA Password: The password to login to the PIA
+* Integration Gateway (boolean): Create monitor file for the IB Gateway
+* IG URL: The URL to check for an ACTIVE gateway. Include `PSIGW/PeopleSoftListeningConnector` in the URL.
 
 Add this configuration to your `psft_customizations.yaml` file to enable `io_heartbeat`.
 
