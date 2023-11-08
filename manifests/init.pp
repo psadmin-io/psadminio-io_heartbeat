@@ -14,25 +14,20 @@ class io_heartbeat (
   $pia_url                   = lookup('io_heartbeat::pia_url', undef, undef, ''),
   $pia_user                  = lookup('io_heartbeat::pia_user', undef, undef, ''),
   $pia_pwd                   = lookup('io_heartbeat::pia_pwd', undef, undef, ''),
+  $igw_url                   = lookup('io_heartbeat::igw_url', undef, undef, ''),
   $web                       = undef,
   $app                       = undef,
   $pia                       = undef,
+  $igw                       = undef,
 ) {
-  case $::osfamily {
-    'windows': {
-      $library_platform = 'Windows'
-    }
-    default: {
-      $library_platform = 'Unix'
-    }
-  }
-
   contain ::io_heartbeat::host
 
   if ($pia) {
     contain ::io_heartbeat::pia
   }
-
+  if ($igw) {
+    contain ::io_heartbeat::igw
+  }
   if ($web) {
     contain ::io_heartbeat::web
   }

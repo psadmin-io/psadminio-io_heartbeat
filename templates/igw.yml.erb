@@ -1,0 +1,8 @@
+- type: http
+  schedule: '@every 60s'
+  id: igw-<%= @service_name%>
+  name: igw-<%= @service_name%>
+  service.name: <%= @service_name%>
+  urls: [ "<%= @igw_url %>" ]
+  check.response:
+    body: ACTIVE
