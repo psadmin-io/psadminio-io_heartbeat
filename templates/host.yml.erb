@@ -1,5 +1,5 @@
 - type: icmp
-  schedule: '@every 60s'
+  schedule: '@every <%= @check_interval %>'
   id: server-<%= @hostname %>
   name: <%= @service_name %>-<%= @hostname %>
   service.name: <%= @service_name %>

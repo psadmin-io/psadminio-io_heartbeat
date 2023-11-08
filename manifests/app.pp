@@ -6,6 +6,7 @@ class io_heartbeat::app (
   $app_port                  = $io_heartbeat::app_port,
   $monitor_location          = $io_heartbeat::monitor_location,
   $service_name              = $io_heartbeat::service_name,
+  $check_interval            = $io_heartbeat::check_interval,
   $hostname                  = $io_heartbeat::hostname,
   $fqdn                      = $io_heartbeat::fqdn
 ) inherits io_heartbeat {

@@ -5,6 +5,7 @@ class io_heartbeat::web (
   $pia_domain_list           = $io_heartbeat::pia_domain_list,
   $monitor_location          = $io_heartbeat::monitor_location,
   $service_name              = $io_heartbeat::service_name,
+  $check_interval            = $io_heartbeat::check_interval,
   $web_port                  = $io_heartbeat::web_port,
   $hostname                  = $io_heartbeat::hostname,
   $fqdn                      = $io_heartbeat::fqdn

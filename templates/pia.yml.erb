@@ -1,5 +1,5 @@
 - type: http
-  schedule: '@every 60s'
+  schedule: '@every <%= @check_interval %>'
   id: pia-<%= @service_name %>
   name: <%= @service_name %>
   service.name: <%= @service_name %>
@@ -12,4 +12,4 @@
     # URL Encoded
     body: "userid=<%= @pia_user %>&pwd=<%= @pia_pwd %>"
   check.response:
-    body: WEBLIB_PTBR.ISCRIPT1.FieldFormula.IScript_StartPage
+    body: <%= @pia_check_string %>

@@ -4,6 +4,7 @@ class io_heartbeat::igw (
   $psft_runtime_group_name   = $io_heartbeat::psft_runtime_group_name,
   $monitor_location          = $io_heartbeat::monitor_location,
   $service_name              = $io_heartbeat::service_name,
+  $check_interval            = $io_heartbeat::check_interval,
   $igw_url                   = $io_heartbeat::igw_url
 ) inherits io_heartbeat {
   notify { "Create Heartbeat monitors for IGW ${service_name}": }

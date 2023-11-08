@@ -58,7 +58,8 @@ The module will not modify PeopleSoft domains. It only creates external files to
 Configuration options:
 
 * Service Name: used by Elasticsearch/Opensearch Observability to group different monitors into a application.
-* Monitor Location: where `io_heartbeat` will write the monitor files.
+* Monitor Location: Where `io_heartbeat` will write the monitor files.
+* Check Interval: How often to run the monitor (default is `60s`)
 * Web (boolean): Create monitor files for web server
 * Web Port: Specify HTTP port for the web monitor (default is `8000`)
 * App (boolean): Create monitor files for app server
@@ -67,6 +68,7 @@ Configuration options:
 * PIA URL: The URL the login POST will use
 * PIA User: The username to login to the PIA
 * PIA Password: The password to login to the PIA
+* PIA Check String: The HTML body string to verify login was successful (default is `WEBLIB_PTBR.ISCRIPT1.FieldFormula.IScript_StartPage`)
 * Integration Gateway (boolean): Create monitor file for the IB Gateway
 * IG URL: The URL to check for an ACTIVE gateway. Include `PSIGW/PeopleSoftListeningConnector` in the URL.
 
@@ -76,15 +78,16 @@ Add this configuration to your `psft_customizations.yaml` file to enable `io_hea
 ---
 io_heartbeat::service_name:     "%{hiera('db_name')}"
 io_heartbeat::monitor_location: '/psoft/share/heartbeat/'
+io_heartbeat::check_interval:   '30s'
 io_heartbeat::web:              true
 io_heartbeat::web_port:         "%{hiera('pia_http_port')}"
 io_heartbeat::app:              true
 io_heartbeat::app_port:         "%{hiera('jolt_port')}"
 io_heartbeat::pia:              true
-io_heartbeat::pia_url:          "https://%{hiera('dns_name')}/psp/ps/EMPLOYEE/ELM"
+io_heartbeat::pia_url:          "https://%{hiera('dns_name')}/psp/%{hiera('pia_site_name')}/EMPLOYEE/%{hiera('portalnode')}"
 io_heartbeat::pia_user:         'UPTIME'
 io_heartbeat::pia_pwd:          'UPT!ME' 
-# you can also reference a keystore value
+# you can also reference a Heartbeat keystore value
 io_heartbeat::pia_pwd:          '${UPTIME_PWD}'
 io_heartbeat::igw:              true
 io_heartbeat::igw_url:          "https://%{hiera('dns_name')}/PSIGW/PeopleSoftListeningConnector"

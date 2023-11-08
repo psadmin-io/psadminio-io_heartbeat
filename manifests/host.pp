@@ -5,6 +5,7 @@ class io_heartbeat::host (
   $pia_domain_list           = $io_heartbeat::pia_domain_list,
   $monitor_location          = $io_heartbeat::monitor_location,
   $service_name              = $io_heartbeat::service_name,
+  $check_interval            = $io_heartbeat::check_interval,
   $hostname                  = $io_heartbeat::hostname,
   $fqdn                      = $io_heartbeat::fqdn
 ) inherits io_heartbeat {

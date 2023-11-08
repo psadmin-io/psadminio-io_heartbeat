@@ -4,6 +4,7 @@ class io_heartbeat::pia (
   $psft_runtime_group_name   = $io_heartbeat::psft_runtime_group_name,
   $monitor_location          = $io_heartbeat::monitor_location,
   $service_name              = $io_heartbeat::service_name,
+  $check_interval            = $io_heartbeat::check_interval,
   $pia_url                   = $io_heartbeat::pia_url,
   $pia_user                  = $io_heartbeat::pia_user,
   $pia_pwd                   = $io_heartbeat::pia_pwd
