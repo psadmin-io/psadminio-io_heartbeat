@@ -25,7 +25,7 @@ The `io_heartbeat` Puppet module will create Heartbeat monitors for web servers,
     $ puppet apply --confdir <DPK_LOCATION> -e "contain ::io_heartbeat"
     ```
 
-4. (Optional) Include `io_heartbeat` as pat of your DPK build by added it to your DPK role.
+4. (Optional) Include `io_heartbeat` as part of your DPK build by adding it to your DPK role.
 
     ```puppet
     # pt_tools_midtier.pp
