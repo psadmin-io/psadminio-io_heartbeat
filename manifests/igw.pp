@@ -5,6 +5,7 @@ class io_heartbeat::igw (
   $monitor_location          = $io_heartbeat::monitor_location,
   $service_name              = $io_heartbeat::service_name,
   $check_interval            = $io_heartbeat::check_interval,
+  $trust_crt                 = $io_heartbeat::trust_crt,
   $igw_url                   = $io_heartbeat::igw_url
 ) inherits io_heartbeat {
   notify { "Create Heartbeat monitors for IGW ${service_name}": }

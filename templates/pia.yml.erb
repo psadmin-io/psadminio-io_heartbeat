@@ -13,3 +13,5 @@
     body: "userid=<%= @pia_user %>&pwd=<%= @pia_pwd %>"
   check.response:
     body: <%= @pia_check_string %>
+  ssl:
+    certificate_authorities: ['<%= @trust_crt %>']

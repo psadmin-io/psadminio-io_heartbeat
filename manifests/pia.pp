@@ -5,6 +5,7 @@ class io_heartbeat::pia (
   $monitor_location          = $io_heartbeat::monitor_location,
   $service_name              = $io_heartbeat::service_name,
   $check_interval            = $io_heartbeat::check_interval,
+  $trust_crt                 = $io_heartbeat::trust_crt,
   $pia_url                   = $io_heartbeat::pia_url,
   $pia_user                  = $io_heartbeat::pia_user,
   $pia_pwd                   = $io_heartbeat::pia_pwd

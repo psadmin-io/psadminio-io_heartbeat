@@ -6,3 +6,5 @@
   urls: [ "<%= @igw_url %>" ]
   check.response:
     body: ACTIVE
+  ssl:
+    certificate_authorities: ['<%= @trust_crt %>']

@@ -79,6 +79,7 @@ Add this configuration to your `psft_customizations.yaml` file to enable `io_hea
 io_heartbeat::service_name:     "%{hiera('db_name')}"
 io_heartbeat::monitor_location: '/psoft/share/heartbeat/'
 io_heartbeat::check_interval:   '30s'
+io_heartbeat::trust_crt:        'monitors.d/trust.crt'
 io_heartbeat::web:              true
 io_heartbeat::web_port:         "%{hiera('pia_http_port')}"
 io_heartbeat::app:              true

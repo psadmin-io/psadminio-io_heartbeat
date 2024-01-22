@@ -8,6 +8,7 @@ class io_heartbeat (
   $hostname                  = $::hostname,
   $fqdn                      = $::fqdn,
   $monitor_location          = undef,
+  $trust_crt                 = lookup('io_heartbeat::trust_crt', undef, undef, 'monitors.d/trust.crt'),
   $service_name              = lookup('io_heartbeat::service_name', undef, undef, 'peoplesoft'),
   $check_interval            = lookup('io_heartbeat::check_interval', undef, undef, '60s'),
   $web_port                  = lookup('io_heartbeat::web_port', undef, undef, '8000'),
